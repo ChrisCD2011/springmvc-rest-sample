@@ -1,1 +1,7 @@
- 5分钟构建spring web mvc Rest风格HelloWorld 
+
+1. 设置环境变量（系统变量）
+（1）设置 JAVA_HOME 环境变量
+（2）设置 M2_HOME 环境变量
+
+2. 运行命令 mvn jetty:run
+3. 浏览器运行URL： http://localhost:9080/springmvc/user/1
