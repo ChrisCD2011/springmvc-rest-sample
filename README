@@ -5,3 +5,4 @@
 
 2. 运行命令 mvn jetty:run
 3. 浏览器运行URL： http://localhost:9080/springmvc/user/1
+4. Tomcat浏览器运行URL： http://localhost:8080/user/1
