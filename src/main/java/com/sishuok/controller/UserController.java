@@ -16,10 +16,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User view(@PathVariable("id") Long id) {
+    public User view(@PathVariable("id") int id) {
         User user = new User();
         user.setId(id);
-        user.setName("zhang");
+        switch (id){
+            case 1:
+                user.setName("杨娇龙");
+                break;
+            case 2:
+                user.setName("许兵");
+                break;
+            case 3:
+                user.setName("何广深");
+                break;
+            default:
+                break;
+        }
+
         return user;
     }
 }
