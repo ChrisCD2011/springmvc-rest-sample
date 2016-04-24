@@ -17,6 +17,8 @@ public class UserController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User view(@PathVariable("id") int id) {
+//        CompanyDao dao = new CompanyDaoImp();
+//        List<Company> list = dao.GetList();
         User user = new User();
         user.setId(id);
         switch (id){
