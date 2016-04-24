@@ -21,7 +21,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.2.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.2.3" />
           <element id="library" level="project" name="com.microsoft.sqlserver:sqljdbc4:4.0" />
-          <element id="library" level="project" name="org.springframework:org.springframework.orm:3.2.2.RELEASE" />
           <element id="library" level="project" name="org.apache.commons:commons-dbcp2:2.1" />
         </element>
       </element>
