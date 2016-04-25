@@ -1,10 +1,16 @@
 package com.sishuok.controller;
 
+import com.sishuok.dao.CompanyDao;
+import com.sishuok.dao.CompanyDaoImp;
+import com.sishuok.entity.Company;
 import com.sishuok.entity.User;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * <p>User: Zhang Kaitao
@@ -14,11 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User view(@PathVariable("id") int id) {
-//        CompanyDao dao = new CompanyDaoImp();
-//        List<Company> list = dao.GetList();
+    public User getUser(@PathVariable("id") int id) throws IOException{
+        CompanyDao dao = new CompanyDaoImp();
+        List<Company> list = dao.GetList();
         User user = new User();
         user.setId(id);
         switch (id){

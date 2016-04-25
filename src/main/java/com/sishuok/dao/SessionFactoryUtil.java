@@ -14,7 +14,7 @@ public class SessionFactoryUtil {
     private static ThreadLocal<SqlSession> threadLocal = new ThreadLocal<SqlSession>();
 
     static {
-        Reader reader = null;
+        Reader reader;
         try {
             reader = Resources.getResourceAsReader(RESOURCE);
         } catch (IOException e) {
@@ -35,7 +35,7 @@ public class SessionFactoryUtil {
      * Function  : 重新创建SqlSessionFactory
      */
     public static void rebuildSqlSessionFactory(){
-        Reader reader = null;
+        Reader reader;
         try {
             reader = Resources.getResourceAsReader(RESOURCE);
         } catch (IOException e) {
@@ -51,7 +51,7 @@ public class SessionFactoryUtil {
     public static SqlSession getSession(){
         SqlSession session = threadLocal.get();
 
-        if(session!=null){
+        if(session == null){
             if(sqlSessionFactory == null){
                 getSqlSessionFactory();
             }
