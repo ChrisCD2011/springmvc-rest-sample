@@ -56,7 +56,7 @@ public class SessionFactoryUtil {
                 getSqlSessionFactory();
             }
             //如果sqlSessionFactory不为空则获取sqlSession，否则返回null
-            session = (sqlSessionFactory!=null) ? sqlSessionFactory.openSession(): null;
+            session = (sqlSessionFactory != null) ? sqlSessionFactory.openSession(): null;
         }
 
         return session;

@@ -7,9 +7,9 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 public class Company implements Serializable {
-    private String CompanyCode;
-    private String CompanyName;
-    private String Url;
+    private String companyCode;
+    private String companyName;
+    private String url;
 
     public Company(){
 
@@ -17,29 +17,29 @@ public class Company implements Serializable {
 
     public Company(String companyCode, String companyName, String url){
         super();
-        this.CompanyCode = companyCode;
-        this.CompanyName = companyName;
-        this.Url = url;
+        this.companyCode = companyCode;
+        this.companyName = companyName;
+        this.url = url;
     }
 
     public String getCompanyCode(){
-        return CompanyCode;
+        return companyCode;
     }
     public void setCompanyCode(String companyCode){
-        this.CompanyCode = companyCode;
+        this.companyCode = companyCode;
     }
 
     public String getCompanyName(){
-        return CompanyName;
+        return companyName;
     }
     public void setCompanyName(String companyName){
-        this.CompanyName = companyName;
+        this.companyName = companyName;
     }
 
     public String getUrl(){
-        return Url;
+        return url;
     }
     public void setUrl(String url){
-        this.Url = url;
+        this.url = url;
     }
 }

@@ -5,6 +5,28 @@
        <!--<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">-->
        <display-name>Spring MVC Application</display-name>
 
+       <context-param>
+              <param-name>webAppRootKey</param-name>
+              <param-value>myApp.root</param-value>
+       </context-param>
+       <context-param>
+              <param-name>log4jConfigLocation</param-name>
+              <param-value>/WEB-INF/classes/log4j.properties</param-value>
+       </context-param>
+       <listener>
+              <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+       </listener>
+       <!--这里配置了一个listener，也可以配置servlet:-->
+       <!--
+       <servlet>
+        <servlet-name>log4j</servlet-name>
+        <servlet-class>
+        org.springframework.web.util.Log4jConfigServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+        </servlet>
+       -->
+
        <!--解决POST中文乱码问题-->
        <filter>
               <filter-name>CharacterEncodingFilter</filter-name>

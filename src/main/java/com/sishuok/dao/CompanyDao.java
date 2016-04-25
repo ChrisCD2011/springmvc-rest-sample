@@ -9,6 +9,6 @@ import java.util.List;
  * Created by Chris on 2016/4/23.
  */
 public interface CompanyDao {
-    public List<Company> GetList() throws IOException;
-    public Company GetByCode(String code) throws IOException;
+    public List<Company> GetList();
+    public Company GetByCode(String code);
 }
