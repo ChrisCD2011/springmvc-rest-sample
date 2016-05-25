@@ -40,11 +40,22 @@ public class UserController {
 
     @RequestMapping(value = "/testCompany/{code}", method = RequestMethod.GET)
     public Company testCompany(@PathVariable("code") String code){
-        CompanyDao dao = new CompanyDaoImp();
-        List<Company> list = dao.GetList();
-        Company company = dao.GetByCode(code);
-        if(company == null && list.size() > 0) company = list.get(0);
-        logger.info("Company Name is: " + company.getCompanyName());
-        return company;
+        try{
+            CompanyDao dao = new CompanyDaoImp();
+            List<Company> list = dao.GetList();
+            if(code.equals("none") && list.size() > 0){
+                Company company = list.get(0);
+                logger.info("Company from List is: " + company.getCompanyName());
+                return company;
+            }
+            Company company = dao.GetByCode(code);
+            if(company == null && list.size() > 0) company = list.get(0);
+            logger.info("Company Name is: " + company.getCompanyName());
+            return company;
+        }
+        catch (Exception ex){
+            logger.error(ex);
+            return null;
+        }
     }
 }

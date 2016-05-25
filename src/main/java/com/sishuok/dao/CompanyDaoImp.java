@@ -19,7 +19,11 @@ public class CompanyDaoImp implements CompanyDao {
 
     public Company GetByCode(String code){
         SqlSession session = SessionFactoryUtil.getSession();
-        Company company = session.selectOne("com.sishuok.map.CompanyMap.getCompany",code);
-        return company;
+        List<Company> list = session.selectList("com.sishuok.map.CompanyMap.getCompany",code);
+        SessionFactoryUtil.closeSession();
+        if(list == null || list.size() == 0) return null;
+        else{
+            return list.get(0);
+        }
     }
 }
